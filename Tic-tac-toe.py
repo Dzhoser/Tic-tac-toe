@@ -1,4 +1,4 @@
-# Tic-tac-toe
+# Tic-tac-toe game
 
 def greet():
     print("-------------------")
