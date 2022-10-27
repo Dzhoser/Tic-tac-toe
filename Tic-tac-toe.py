@@ -41,7 +41,7 @@ def print_pole(pole_):
 def hod(player_):
     proverka(pole, player_)
     print_pole(pole)
-    fig = 'x' if player_ == 1 else 'o'
+    fig = 'X' if player_ == 1 else '0'
     if win_condition(pole, fig):
         # print(f"Игрок {player} победил!")
         return True
@@ -65,7 +65,7 @@ def proverka(pole_, player_):
 
         if all([0 <= stroka <= 2, 0 <= stolbez <= 2]):
             if pole_[stroka][stolbez] == ' ':
-                fig = 'x' if player_ == 1 else 'o'
+                fig = 'X' if player_ == 1 else '0'
                 pole[stroka][stolbez] = fig
                 break
             else:
