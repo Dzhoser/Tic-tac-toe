@@ -13,25 +13,29 @@ def greet():
 
 
 #  функция проверки условия выйгрыша
-def win_condition(pole_, sim):
+def win_condition(pole_, symbol):
     for element in pole_:
-        if element == [sim, sim, sim]:
+        if element == [symbol, symbol, symbol]:
             return True
     for i in range(3):
-        if [pole_[0][i], pole_[1][i], pole_[2][i]] == [sim, sim, sim]:
+        if [pole_[0][i], pole_[1][i], pole_[2][i]] == [symbol, symbol, symbol]:
             return True
-    if [pole_[0][0], pole_[1][1], pole_[2][2]] == [sim, sim, sim]:
+    if [pole_[0][0], pole_[1][1], pole_[2][2]] == [symbol, symbol, symbol]:
         return True
-    if [pole_[0][2], pole_[1][1], pole_[2][0]] == [sim, sim, sim]:
+    if [pole_[0][2], pole_[1][1], pole_[2][0]] == [symbol, symbol, symbol]:
         return True
     return False
 
 # функция отрисовки игрового поля
 def print_pole(pole_):
-    print("    0  1  2")
-    print("0   {}  {}  {}".format(pole_[0][0], pole_[0][1], pole_[0][2]))
-    print("1   {}  {}  {}".format(pole_[1][0], pole_[1][1], pole_[1][2]))
-    print("2   {}  {}  {}".format(pole_[2][0], pole_[2][1], pole_[2][2]))
+    print("    | 0 | 1 | 2 |")
+    print("-------------------")
+    print("0   | {} | {} | {} |".format(pole_[0][0], pole_[0][1], pole_[0][2]))
+    print("-------------------")
+    print("1   | {} | {} | {} |".format(pole_[1][0], pole_[1][1], pole_[1][2]))
+    print("-------------------")
+    print("2   | {} | {} | {} |".format(pole_[2][0], pole_[2][1], pole_[2][2]))
+    print("-------------------")
 
 # функция хода игрока
 def hod(player_):
